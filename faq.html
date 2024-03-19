@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+<title>FAQ Page</title>
+<style>
+    body{
+        margin:0px;
+        box-sizing: border-box;
+        font-family: "Orbitron";
+    }
+    :root{
+        --light-gold:#DDD9A7;
+    }
+    .faq{
+        position: relative;
+        background-color: black;
+        height: 160vh;
+    }
+    .particles-js{
+        position: absolute;
+        z-index: -1;
+        height: 160vh;
+    }
+  .faq-container {
+    position: absolute;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+  }
+  .faq-container h1{
+    color:var(--light-gold);
+  }
+
+  .faq-box {
+    background-color: rgba(0, 0, 0, 0.7); /* Transparent black */
+    padding: 20px;
+    border: 2px solid var(--light-gold); /* light gold */
+    color: white;
+    width: 60%;
+    max-width: 600px; /* Adjust as needed */
+    margin-bottom: 20px;
+    border: 2px solid var(--light-gold); /* Drop shadow */
+  }
+  .faq-box:hover{
+    background-color: var(--light-gold);
+    color: black;
+    }
+
+  .question {
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+
+  .answer {
+    display: none;
+  }
+
+  .answer.open {
+    display: block;
+  }
+
+  .symbol {
+    float: right;
+  }
+  .btn{
+    padding: 10px 20px;
+    border: 2px solid var(--light-gold);
+    background-color: black;
+  }
+  .btn:hover{
+    transform: scale(1.2);
+  }
+  .btn a{
+    text-decoration: none;
+    color: white;
+  }
+
+</style>
+</head>
+<body>
+<div class="faq">
+    <div class="faq-container">
+        <h1>FAQS</h1>
+        <div class="faq-box">
+          <div class="question">
+              Q: Can I participate individually, or do I need to be part of a team?<span class="symbol">+</span>
+          </div>
+          <div class="answer">
+              Participants must form teams consisting of a minimum of 2 members and a maximum of 5 members. If you are solo participant we will group you with some other team.
+          </div>
+        </div>
+    
+        <div class="faq-box">
+          <div class="question">
+              Q: Will there be any food or refreshments provided during the Idea-thon?<span class="symbol">+</span>
+          </div>
+          <div class="answer">
+              A: Yes, refreshments will be provided to participants to keep their energy levels high throughout the event. However, participants are advised to plan for their meals accordingly, especially for the overnight sessions
+          </div>
+        </div>
+        <div class="faq-box">
+          <div class="question">
+              Q: What happens if my team misses the submission deadline?<span class="symbol">+</span>
+          </div>
+          <div class="answer">
+              A: Late submissions may not be considered for evaluation. It's crucial to adhere to the submission deadline to ensure your project is reviewed by the judges.
+          </div>
+        </div>
+        <div class="faq-box">
+          <div class="question">
+              Q: How will the winners be determined, and what prizes are available?<span class="symbol">+</span>
+          </div>
+          <div class="answer">
+              A: Winners will be determined based on the judging criteria, and prizes will be awarded to the top-performing teams. The details of prizes and winner selection will be announced during the closing ceremony of the Idea-thon.
+          </div>
+        </div>
+        <button class="btn"><a href="contact.html">Go Back</a></button>
+      </div>
+      <div id="particles-js"></div>
+      <!-- particles.js container -->
+      <script src="particles.js"></script>
+      <script src="particlesApp.js"></script>
+</div>
+
+<script>
+  // JavaScript to toggle the dropdown
+  document.querySelectorAll('.question').forEach(item => {
+    item.addEventListener('click', event => {
+      const answer = event.currentTarget.nextElementSibling;
+      answer.classList.toggle('open');
+    });
+  });
+</script>
+
+</body>
+</html>

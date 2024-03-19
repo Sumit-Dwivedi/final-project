@@ -1,0 +1,130 @@
+*{
+    box-sizing: border-box;
+    margin:0px;
+    font-family: "Orbitron", sans-serif;
+}
+:root{
+    --gold:#FBECB8;
+}
+.contact-container{
+    height: 90vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+}
+.container{
+    width: 80%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 20px;
+    background-color: black;
+    gap:30px;
+}
+form{
+    width:fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap:15px;
+}
+form input,textarea{
+    width: 100%;
+    padding: 12px 12px;
+    border-radius: 5px;
+}
+textarea{
+    margin-top: -20px;
+}
+input{
+    margin-bottom: 10px;
+}
+input:focus,textarea:focus{
+    outline: none;
+}
+.send{
+    position: relative;
+    font-size: 18px;
+    padding: 15px 30px;
+    color: white;   
+    background-color: black;
+    border-color: white;
+    z-index: 1;
+    transition: color 300ms ease-in-out;
+}
+
+.send::before{
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    bottom: 0;
+    right: 0;
+    background-color: var(--gold);
+    z-index: -1;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 300ms ease-in-out;
+    overflow: hidden;
+}
+.send:hover::before,.send:focus::before{
+    transform: scaleY(1);
+}
+.send:hover,.send:focus{
+    color:black;
+    border-color: black;
+}
+
+.contact-container-heading{
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items:center;
+    color:var(--gold);
+    width: 500px;
+}
+.contact-container-heading h1{
+    width:inherit;
+    text-align: end;
+    font-size: 70px;
+}
+.contact-container-heading span{
+    display: block;
+    text-align: end;
+
+}
+.contact-container-heading p{
+    color:grey;
+    padding-top: 90px;
+    padding-left: 130px;
+    text-align: end;
+}
+
+@media screen and (max-width:500px) {
+    .contact-container{
+        height: 120vh;
+    }
+    .container{
+        flex-direction: column-reverse;
+    }
+    .contact-container-heading{
+        width:100%;
+        height: fit-content;
+        text-align: center ;
+    }
+    .contact-container-heading h1{
+        text-align: center;
+        font-size: 40px;
+    }
+    .contact-container-heading span{
+        text-align: center;
+    }
+    .contact-container-heading-text{
+        display: none;
+    }
+}
